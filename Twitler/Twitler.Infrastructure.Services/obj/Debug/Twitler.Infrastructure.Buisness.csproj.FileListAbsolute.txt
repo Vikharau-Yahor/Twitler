@@ -1,0 +1,4 @@
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Buisness\bin\Debug\Twitler.Infrastructure.Buisness.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Buisness\bin\Debug\Twitler.Infrastructure.Buisness.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Buisness\obj\Debug\Twitler.Infrastructure.Buisness.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Buisness\obj\Debug\Twitler.Infrastructure.Buisness.pdb

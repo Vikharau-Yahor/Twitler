@@ -1,0 +1,14 @@
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\Twitler.Infrastructure.Data.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\Twitler.Infrastructure.Data.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\obj\Debug\Twitler.Infrastructure.Data.csprojResolveAssemblyReference.cache
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\obj\Debug\Twitler.Infrastructure.Data.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\obj\Debug\Twitler.Infrastructure.Data.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\Twitler.Infrastructure.Data.dll.config
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\EntityFramework.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\Twitler.Domain.Model.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\Twitler.Domain.Model.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\EntityFramework.xml
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\obj\Debug\Twitler.Infrastructure.Data.Migrations.Initial.resources
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\obj\Debug\Twitler.Infrastructure.Data.csproj.GenerateResource.Cache

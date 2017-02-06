@@ -1,0 +1,7 @@
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Core.Interfaces\bin\Debug\Twitler.Domain.Interfaces.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Core.Interfaces\bin\Debug\Twitler.Domain.Interfaces.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Core.Interfaces\bin\Debug\Twitler.Domain.Model.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Core.Interfaces\bin\Debug\Twitler.Domain.Model.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Core.Interfaces\obj\Debug\Twitler.Interfaces.csprojResolveAssemblyReference.cache
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Core.Interfaces\obj\Debug\Twitler.Domain.Interfaces.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Core.Interfaces\obj\Debug\Twitler.Domain.Interfaces.pdb

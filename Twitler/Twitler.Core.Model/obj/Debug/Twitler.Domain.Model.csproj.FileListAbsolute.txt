@@ -1,0 +1,5 @@
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Domain.Model\bin\Debug\Twitler.Domain.Model.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Domain.Model\bin\Debug\Twitler.Domain.Model.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Domain.Model\obj\Debug\Twitler.Domain.Model.csprojResolveAssemblyReference.cache
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Domain.Model\obj\Debug\Twitler.Domain.Model.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Domain.Model\obj\Debug\Twitler.Domain.Model.pdb
