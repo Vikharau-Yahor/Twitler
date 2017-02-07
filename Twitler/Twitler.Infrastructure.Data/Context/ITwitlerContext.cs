@@ -7,5 +7,6 @@ namespace Twitler.Data.Context
     public interface ITwitlerContext : IDisposable
     {
         DbSet<User> Users { get; set; }
+        DbSet<Twit> Twits { get; set; }
     }
 }

@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201702061102569_HashedPassword.Designer.cs">
       <DependentUpon>201702061102569_HashedPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702070912093_AddTwitMessages.cs" />
+    <Compile Include="Migrations\201702070912093_AddTwitMessages.Designer.cs">
+      <DependentUpon>201702070912093_AddTwitMessages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702061102569_HashedPassword.resx">
       <DependentUpon>201702061102569_HashedPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702070912093_AddTwitMessages.resx">
+      <DependentUpon>201702070912093_AddTwitMessages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
