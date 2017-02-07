@@ -4,12 +4,11 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Вход</h2>
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    <h2>Вход</h2>
+    <hr/>
     <div class="form-horizontal">
         @Html.ValidationSummary(true)
 

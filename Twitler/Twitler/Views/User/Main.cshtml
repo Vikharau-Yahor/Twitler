@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="find-panel">
+    <div style="float: left; width: 70%">
+        <input type="text" class="form-control" value="Поиск..." />
+    </div>
+    <div style="float: left; width: 15%">
+        <button class="btn btn-default">Поиск</button>
+    </div>
+</div>
+
+<div class="message-panel">
+    <label>Что-то новое?</label>
+    <hr/>
+    <textarea class="form-control" style="height: 75px"></textarea>
+    <button class="btn btn-info">Твитнуть</button>
+</div>
+<div class="posts-feed-panel">
+        @Html.Partial("~/Views/User/_PartialMessages.cshtml")
+</div>

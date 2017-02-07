@@ -1,6 +1,11 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    height: 100%;
+    background-color: rgb(245, 248, 250);
+}
+html {
+  height: 100%;  
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +27,65 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.side-panel {
+    border-color: rgb(225, 232, 237);
+    background-color: white;
+    border-radius: 6px;
+    height: 40%;
+    padding-top: 10px;
+}
+.main-container {
+    height: 100%;
+    margin-top: 10px;
+    margin-bottom: 15%;
+}
+
+.navbar-top-style {
+    background-color: white;
+    border-width: 2px;
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+}
+
+.navbar-bottom-style {
+    background-color: white;
+    border-width: 2px;
+    border-top-color: rgba(0, 0, 0, 0.05);
+}
+
+.find-panel {
+    background-color: white;
+    border-width: 2px;
+    border-radius: 6px;
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+    height: 45px;
+    padding: 5px;
+}
+
+.message-panel {
+    background-color: white;
+    border-width: 2px;
+    border-radius: 6px;
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+    height: 200px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.posts-feed-panel {
+     background-color: white;
+    border-width: 2px;
+    border-radius: 6px;
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+    padding-bottom: 30px;
+    height: auto;
+}
+
+.post-message {
+    padding-Top: 10px;
+    padding-left: 40px;
+    margin-bottom: 15px;
+}
+
+

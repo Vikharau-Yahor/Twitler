@@ -35,7 +35,7 @@ namespace Twitler.Controllers
                 if (user != null)
                 {
                     FormsAuthentication.SetAuthCookie(user.Email, true);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Main", "User");
                 }
                 else
                 {
