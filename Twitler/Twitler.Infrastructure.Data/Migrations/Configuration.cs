@@ -26,7 +26,6 @@ namespace Twitler.Data.Migrations
         {
             AddUsers(context);
             AddTwits(context);
-            context.SaveChanges();
         }
 
         private void AddUsers(TwitlerContext context)
@@ -35,6 +34,7 @@ namespace Twitler.Data.Migrations
             context.Users.Add(new User { Email = "Semenov@gmail.com", Password = _encryptor.Encrypt("333444") });
             context.Users.Add(new User { Email = "lepra@yandex.ru", Password = _encryptor.Encrypt("23456") });
             context.Users.Add(new User { Email = "celina@google.by", Password = _encryptor.Encrypt("123456") });
+            context.SaveChanges();
         }
 
         private void AddTwits(TwitlerContext context)
@@ -58,6 +58,7 @@ namespace Twitler.Data.Migrations
                     Message = user.Email + " say " + messageList[messageRandom.Next(0, messageList.Count)],
                 });
             }
+            context.SaveChanges();
         }
     }
 }
