@@ -1,34 +1,31 @@
+using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using Twitler.Data.Context;
 using Twitler.Domain.Model;
 using Twitler.Utils.Encryptors;
 
-namespace Twitler.Infrastructure.Data.Migrations
+namespace Twitler.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
     internal sealed class Configuration : DbMigrationsConfiguration<TwitlerContext>
     {
         private readonly IEncryptor _encryptor;
+
         public Configuration()
         {
-            _encryptor = new MD5Encryptor();
             AutomaticMigrationsEnabled = false;
+            _encryptor = new MD5Encryptor();
         }
 
         protected override void Seed(TwitlerContext context)
         {
-            context.Twits.r
             FillDbInitialData(context);
-            base.Seed(context);
         }
 
         private void FillDbInitialData(TwitlerContext context)
         {
             AddUsers(context);
+            AddTwits(context);
             context.SaveChanges();
         }
 
@@ -44,23 +41,23 @@ namespace Twitler.Infrastructure.Data.Migrations
         {
             Random minuteRandom = new Random();
             Random messageRandom = new Random();
+
             List<string> messageList = new List<string>
             {
                 "Hello", "Как выглядит чашка кофе в разных странах мира",
                 "Слишком резко похолодало.","Where can I get this bath bomb?",
                 "спиритические сеансы по вызову лифтера", "Makeup inspired by your pet"
             };
+
             foreach (var user in context.Users)
             {
-
                 user.Twits.Add(new Twit
                 {
                     User = user,
-                    DatePost = DateTime.Now.AddMinutes(minuteRandom.Next(1,500)),
-                    Message = user.Email + " say " + messageList[messageRandom.Next(0,messageList.Count)],
+                    DatePost = DateTime.Now.AddMinutes(minuteRandom.Next(1, 500)),
+                    Message = user.Email + " say " + messageList[messageRandom.Next(0, messageList.Count)],
                 });
             }
-
         }
     }
 }

@@ -1,9 +1,9 @@
-namespace Twitler.Infrastructure.Data.Migrations
+namespace Twitler.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddTwitMessages : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -20,12 +20,23 @@ namespace Twitler.Infrastructure.Data.Migrations
                 .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
+            CreateTable(
+                "dbo.Users",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Email = c.String(),
+                        Password = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Twits", "UserId", "dbo.Users");
             DropIndex("dbo.Twits", new[] { "UserId" });
+            DropTable("dbo.Users");
             DropTable("dbo.Twits");
         }
     }

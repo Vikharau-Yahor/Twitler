@@ -51,17 +51,9 @@
   <ItemGroup>
     <Compile Include="Context\ITwitlerContext.cs" />
     <Compile Include="Context\TwitlerContext.cs" />
-    <Compile Include="Migrations\201702051015570_Initial.cs" />
-    <Compile Include="Migrations\201702051015570_Initial.Designer.cs">
-      <DependentUpon>201702051015570_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702061102569_HashedPassword.cs" />
-    <Compile Include="Migrations\201702061102569_HashedPassword.Designer.cs">
-      <DependentUpon>201702061102569_HashedPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702070912093_AddTwitMessages.cs" />
-    <Compile Include="Migrations\201702070912093_AddTwitMessages.Designer.cs">
-      <DependentUpon>201702070912093_AddTwitMessages.cs</DependentUpon>
+    <Compile Include="Migrations\201702071012353_Initial.cs" />
+    <Compile Include="Migrations\201702071012353_Initial.Designer.cs">
+      <DependentUpon>201702071012353_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,17 +78,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702051015570_Initial.resx">
-      <DependentUpon>201702051015570_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702061102569_HashedPassword.resx">
-      <DependentUpon>201702061102569_HashedPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702070912093_AddTwitMessages.resx">
-      <DependentUpon>201702070912093_AddTwitMessages.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702071012353_Initial.resx">
+      <DependentUpon>201702071012353_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

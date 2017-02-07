@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using Ninject;
 using Twitler.Data.Context;
@@ -34,8 +31,10 @@ namespace Twitler.DI
 
         private void AddBindings()
         {
-            kernel.Bind<ITwitlerContext>().To<TwitlerContext>().WithConstructorArgument("dbConnectionString", "TwitlerDB");
-
+            kernel.Bind<ITwitlerContext>()
+                .To<TwitlerContext>()
+                .WithConstructorArgument("dbConnectionString", "TwitlerDB");
+            
             //Repositories
             kernel.Bind<IUserRepository>().To<UserRepository>();
 
