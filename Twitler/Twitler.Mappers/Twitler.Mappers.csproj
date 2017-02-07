@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F86162A-240D-4EE8-9171-5EEE5EE78273}</ProjectGuid>
+    <ProjectGuid>{1BF1D0C6-5513-4F22-94B8-D03FF3244E46}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Twitler.Domain.Interfaces</RootNamespace>
-    <AssemblyName>Twitler.Domain.Interfaces</AssemblyName>
+    <RootNamespace>Twitler.Mappers</RootNamespace>
+    <AssemblyName>Twitler.Mappers</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,14 +48,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITwitRepository.cs" />
-    <Compile Include="IUserRepository.cs" />
+    <Compile Include="AutoMapperCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Twitler.Core.Model\Twitler.Model.csproj">
       <Project>{CB299E74-7D42-41AE-8CCD-FD75E0316B23}</Project>
       <Name>Twitler.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Twitler.ViewModels\Twitler.ViewModels.csproj">
+      <Project>{4351550f-5afc-4f8f-a633-703e271494c8}</Project>
+      <Name>Twitler.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

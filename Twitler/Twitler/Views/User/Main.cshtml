@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Twitler.ViewModels.Twit.TwitVm>
+@{
     ViewBag.Title = "Main";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
@@ -19,5 +20,5 @@
     <button class="btn btn-info">Твитнуть</button>
 </div>
 <div class="posts-feed-panel">
-        @Html.Partial("~/Views/User/_PartialMessages.cshtml")
+        @Html.Partial("~/Views/User/_PartialMessages.cshtml",Model)
 </div>

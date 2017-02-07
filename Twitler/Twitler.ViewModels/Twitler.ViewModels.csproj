@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F86162A-240D-4EE8-9171-5EEE5EE78273}</ProjectGuid>
+    <ProjectGuid>{4351550F-5AFC-4F8F-A633-703E271494C8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Twitler.Domain.Interfaces</RootNamespace>
-    <AssemblyName>Twitler.Domain.Interfaces</AssemblyName>
+    <RootNamespace>Twitler.ViewModels</RootNamespace>
+    <AssemblyName>Twitler.ViewModels</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,15 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITwitRepository.cs" />
-    <Compile Include="IUserRepository.cs" />
+    <Compile Include="Account\LoginVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Twitler.Core.Model\Twitler.Model.csproj">
-      <Project>{CB299E74-7D42-41AE-8CCD-FD75E0316B23}</Project>
-      <Name>Twitler.Model</Name>
-    </ProjectReference>
+    <Compile Include="Twit\TwitVM.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

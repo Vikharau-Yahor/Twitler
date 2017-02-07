@@ -59,3 +59,9 @@ D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\EntityFramework.SqlServer.dll
 D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\EntityFramework.SqlServer.xml
 D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.Utils.dll
 D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.Utils.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\AutoMapper.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.ViewModels.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.Mappers.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.ViewModels.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\AutoMapper.xml
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.Mappers.pdb

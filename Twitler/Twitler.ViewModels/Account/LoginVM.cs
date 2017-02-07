@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Twitler.Models.Account
+namespace Twitler.ViewModels.Account
 {
     public class LoginVm
     {

@@ -33,3 +33,9 @@ D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\obj\Debug\Twitler.DI.dll
 D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\obj\Debug\Twitler.DI.pdb
 D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Twitler.Utils.dll
 D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Twitler.Utils.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\AutoMapper.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Twitler.Mappers.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Twitler.ViewModels.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Twitler.Mappers.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\AutoMapper.xml
+D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Twitler.ViewModels.pdb

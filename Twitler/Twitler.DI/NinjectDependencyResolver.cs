@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using AutoMapper;
 using Ninject;
 using Twitler.Data.Context;
 using Twitler.Data.Repositories;
 using Twitler.Domain.Interfaces;
+using Twitler.Mappers;
 using Twitler.Utils.Encryptors;
 
 namespace Twitler.DI
@@ -37,10 +39,13 @@ namespace Twitler.DI
             
             //Repositories
             kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<ITwitRepository>().To<TwitRepository>();
 
             //Utils
             kernel.Bind<IEncryptor>().To<MD5Encryptor>().InSingletonScope();
 
+            //automapper
+            kernel.Bind<IMapper>().ToMethod(AutoMapperCreator.GetMapper).InSingletonScope();
 
         }
 

@@ -2,8 +2,8 @@
 using System.Web.Security;
 using Twitler.Domain.Interfaces;
 using Twitler.Domain.Model;
-using Twitler.Models.Account;
 using Twitler.Utils.Encryptors;
+using Twitler.ViewModels.Account;
 
 namespace Twitler.Controllers
 {
