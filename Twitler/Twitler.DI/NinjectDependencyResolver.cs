@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
 using Ninject;
+using Ninject.Web.Common;
 using Twitler.Data.Context;
 using Twitler.Data.Repositories;
 using Twitler.Domain.Interfaces;
 using Twitler.Mappers;
+using Twitler.Mappers.Mappers;
 using Twitler.Utils.Encryptors;
 using Twitler.Utils.HashTools;
 
@@ -35,7 +37,7 @@ namespace Twitler.DI
         private void AddBindings()
         {
             kernel.Bind<ITwitlerContext>()
-                .To<TwitlerContext>()
+                .To<TwitlerContext>().InRequestScope()
                 .WithConstructorArgument("dbConnectionString", "TwitlerDB");
             
             //Repositories
@@ -47,8 +49,9 @@ namespace Twitler.DI
             kernel.Bind<IHashExtractor>().To<HashExtractor>().InSingletonScope();
             kernel.Bind<IHashConverter>().To<HashConverter>().InSingletonScope();
 
-            //automapper
+            //mappers
             kernel.Bind<IMapper>().ToMethod(AutoMapperCreator.GetMapper).InSingletonScope();
+            kernel.Bind<TwitMapper>().ToSelf().InSingletonScope();
 
         }
 

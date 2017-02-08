@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperCreator.cs" />
+    <Compile Include="Mappers\TwitMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\Twitler.Core.Model\Twitler.Model.csproj">
       <Project>{CB299E74-7D42-41AE-8CCD-FD75E0316B23}</Project>
       <Name>Twitler.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Twitler.Utils\Twitler.Utils.csproj">
+      <Project>{0a2c9b98-c5d4-4668-90bd-535bc0f5102d}</Project>
+      <Name>Twitler.Utils</Name>
     </ProjectReference>
     <ProjectReference Include="..\Twitler.ViewModels\Twitler.ViewModels.csproj">
       <Project>{4351550f-5afc-4f8f-a633-703e271494c8}</Project>

@@ -53,7 +53,7 @@ $(document).ready(function () {
 
     $("#btn-post-twit").click(function (e) {
         var newTwit = CollectDataOfNewTwit();
-        //if (ValidatePostMessage(newTwit))
+        if (ValidatePostMessage(newTwit))
             PostTwit(newTwit);
     });
 

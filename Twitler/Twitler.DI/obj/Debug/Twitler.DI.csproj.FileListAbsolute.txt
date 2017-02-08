@@ -39,3 +39,5 @@ D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Twitler.ViewModels.dl
 D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Twitler.Mappers.pdb
 D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\AutoMapper.xml
 D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Twitler.ViewModels.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Ninject.Web.Common.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.DI\bin\Debug\Ninject.Web.Common.xml

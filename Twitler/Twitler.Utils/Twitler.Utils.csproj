@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comparers\TwitComparerByHashTag.cs" />
     <Compile Include="Encryptors\IEncryptor.cs" />
     <Compile Include="Encryptors\MD5Encryptor.cs" />
     <Compile Include="HashTools\HashExtractor.cs" />
@@ -47,6 +48,12 @@
     <Compile Include="HashTools\IHashConverter.cs" />
     <Compile Include="HashTools\IHashExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Twitler.Core.Model\Twitler.Model.csproj">
+      <Project>{cb299e74-7d42-41ae-8ccd-fd75e0316b23}</Project>
+      <Name>Twitler.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

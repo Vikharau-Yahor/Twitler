@@ -175,6 +175,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Posts\posts_search.js" />
     <Content Include="Scripts\Posts\post_twit.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -220,6 +221,10 @@
     <ProjectReference Include="..\Twitler.Core.Model\Twitler.Model.csproj">
       <Project>{CB299E74-7D42-41AE-8CCD-FD75E0316B23}</Project>
       <Name>Twitler.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Twitler.Mappers\Twitler.Mappers.csproj">
+      <Project>{1BF1D0C6-5513-4F22-94B8-D03FF3244E46}</Project>
+      <Name>Twitler.Mappers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Twitler.Utils\Twitler.Utils.csproj">
       <Project>{0a2c9b98-c5d4-4668-90bd-535bc0f5102d}</Project>

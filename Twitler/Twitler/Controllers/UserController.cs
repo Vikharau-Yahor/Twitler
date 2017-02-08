@@ -7,6 +7,8 @@ using AutoMapper;
 using Microsoft.Ajax.Utilities;
 using Twitler.Domain.Interfaces;
 using Twitler.Domain.Model;
+using Twitler.Mappers.Mappers;
+using Twitler.Utils.Comparers;
 using Twitler.Utils.HashTools;
 using Twitler.ViewModels.Twit;
 
@@ -15,16 +17,19 @@ namespace Twitler.Controllers
     [Authorize]
     public class UserController : Controller
     {
-        private readonly IMapper _mapper;
         private readonly ITwitRepository _twitRepository;
+        private readonly IUserRepository _userRepository;
+        private readonly TwitMapper _twitMapper;
         private readonly IHashExtractor _hashExtractor;
 
-        public UserController(IMapper mapper,
-                              ITwitRepository twitRepository,
+        public UserController(ITwitRepository twitRepository,
+                              IUserRepository userRepository,
+                              TwitMapper twitMapper,
                               IHashExtractor hashExtractor)
         {
-            _mapper = mapper;
             _twitRepository = twitRepository;
+            _userRepository = userRepository;
+            _twitMapper = twitMapper;
             _hashExtractor = hashExtractor;
         }
 
@@ -36,9 +41,19 @@ namespace Twitler.Controllers
         public ActionResult PostsFeed()
         {
             var twits = _twitRepository.GetAll();
-            var twitsViewModels = twits.Select(_mapper.Map<Twit, TwitVm>)
+            var twitsViewModels = twits.Select(_twitMapper.ToTwitVm)
                 .OrderByDescending(t => t.DatePost).ToList();
 
+            return PartialView("_PartialMessages", twitsViewModels);
+        }
+
+        
+        public ActionResult SearchTwits(string searchString)
+        {
+            var hashValues = _hashExtractor.GetFromString(searchString);       
+            var twits = _twitRepository.GetByHashTags(hashValues)
+                .OrderBy(t => t, new TwitComparerByHashTag(hashValues));
+            var twitsViewModels = twits.Select(_twitMapper.ToTwitVm).ToList();
             return PartialView("_PartialMessages", twitsViewModels);
         }
 
@@ -47,9 +62,10 @@ namespace Twitler.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = _hashExtractor.GetFromString(twitModel.Message);
-                var newTwit = _mapper.Map<PostedTwitJm, Twit>(twitModel);
-                _twitRepository.Add(User.Identity.Name, newTwit);
+                //var hashValues = _hashExtractor.GetFromString(twitModel.Message);
+                var curUser = _userRepository.Get(User.Identity.Name);
+                var newTwit = _twitMapper.ToDomainModel(twitModel, curUser);
+                _twitRepository.Add(newTwit);
 
                 return RedirectToAction("PostsFeed");
             }

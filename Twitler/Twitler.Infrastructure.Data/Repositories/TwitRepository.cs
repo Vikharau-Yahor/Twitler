@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using Twitler.Data.Context;
 using Twitler.Domain.Interfaces;
@@ -21,17 +22,45 @@ namespace Twitler.Data.Repositories
             return _context.Twits.ToList();
         }
 
-        public void Add(string userEmail, Twit twit)
+        public List<Twit> GetByHashTags(int[] hashValues)
         {
-            if (userEmail == null || twit == null)
-                return;
+            return _context.Twits.Where(t => t.HashTags.Any(ht => hashValues.Contains(ht.HashValue)))
+                .Include(t => t.HashTags).ToList();
+        }
 
-            var user = _context.Users.SingleOrDefault(u => u.Email == userEmail);
-            if (user != null)
+        public void Add(Twit twit)
+        {
+            if (twit != null)
             {
-                user.Twits.Add(twit);
+                AttachHashTags(twit.HashTags);
+               
+                //insert twit
+                _context.Twits.Add(twit);
                 _context.SaveChanges();
             }
         }
+
+        private void AttachHashTags(ICollection<HashTag> hashTags)
+        {
+            var hashArray = hashTags.Select(ht => ht.HashValue).ToArray();
+            if (hashArray.Length != 0)
+            {
+                var existTags = _context.HashTags.Where(ht => hashArray.Contains(ht.HashValue))
+                                             .Select(ht => ht.HashValue).ToArray();
+                foreach (var hashTag in hashTags)
+                {
+                    if (existTags.Contains(hashTag.HashValue))
+                    {
+                        _context.Entry(hashTag).State = EntityState.Unchanged;
+                    }
+                    else
+                    {
+                        _context.Entry(hashTag).State = EntityState.Added;
+                    }
+                }
+            }
+        }
+
+        
     }
 }
