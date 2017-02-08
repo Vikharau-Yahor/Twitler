@@ -40,8 +40,9 @@ namespace Twitler.Controllers
 
         public ActionResult PostsFeed()
         {
+            var curUserName = User.Identity.Name;
             var twits = _twitRepository.GetAll();
-            var twitsViewModels = twits.Select(_twitMapper.ToTwitVm)
+            var twitsViewModels = twits.Select(t=>_twitMapper.ToTwitVm(t,curUserName))
                 .OrderByDescending(t => t.DatePost).ToList();
 
             return PartialView("_PartialMessages", twitsViewModels);
@@ -50,10 +51,11 @@ namespace Twitler.Controllers
         
         public ActionResult SearchTwits(string searchString)
         {
+            var curUserName = User.Identity.Name;
             var hashValues = _hashExtractor.GetFromString(searchString);       
             var twits = _twitRepository.GetByHashTags(hashValues)
                 .OrderBy(t => t, new TwitComparerByHashTag(hashValues));
-            var twitsViewModels = twits.Select(_twitMapper.ToTwitVm).ToList();
+            var twitsViewModels = twits.Select(t => _twitMapper.ToTwitVm(t, curUserName)).ToList();
             return PartialView("_PartialMessages", twitsViewModels);
         }
 
@@ -62,7 +64,6 @@ namespace Twitler.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var hashValues = _hashExtractor.GetFromString(twitModel.Message);
                 var curUser = _userRepository.Get(User.Identity.Name);
                 var newTwit = _twitMapper.ToDomainModel(twitModel, curUser);
                 _twitRepository.Add(newTwit);
@@ -70,6 +71,15 @@ namespace Twitler.Controllers
                 return RedirectToAction("PostsFeed");
             }
             return new EmptyResult();
+        }
+
+        [HttpPost]
+        public ActionResult DeleteTwit(int twitId)
+        {
+            var removedTwit = _twitRepository.GetIfOwned(User.Identity.Name, twitId);
+            _twitRepository.Delete(removedTwit);
+
+            return RedirectToAction("PostsFeed");
         }
     }
 }

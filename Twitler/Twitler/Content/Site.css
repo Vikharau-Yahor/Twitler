@@ -85,7 +85,15 @@ textarea {
 .post-message {
     padding-Top: 10px;
     padding-left: 40px;
+    padding-right: 20px;
     margin-bottom: 15px;
+}
+
+.delete-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+    background-color:white;
 }
 
 

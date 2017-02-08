@@ -9,6 +9,7 @@
             var postsFeed = $(".posts-feed-panel");
             postsFeed.empty();
             postsFeed.append(response);
+            SetClickEventsForDeleteBtns();
         },
         error: function (data, error, mess) {
             console.log("error: " + data + " " + error + " " + mess);

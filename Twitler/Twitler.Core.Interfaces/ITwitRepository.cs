@@ -7,7 +7,9 @@ namespace Twitler.Domain.Interfaces
     public interface ITwitRepository
     {
         List<Twit> GetAll();
-        void Add(Twit twit);
         List<Twit> GetByHashTags(int[] hashValues);
+        Twit GetIfOwned(string userEmailOwner, int twitId);
+        void Add(Twit twit);
+        void Delete(Twit twit);
     }
 }

@@ -25,7 +25,7 @@ namespace Twitler.Utils.HashTools
             var hashTagsMatches = Regex.Matches(text, HashPattern);
 
             return (from object m in hashTagsMatches
-                select _hashConverter.GetHashValue(m.ToString())).ToArray();
+                select _hashConverter.GetHashValue(m.ToString())).Distinct().ToArray();
         }
     }
 }

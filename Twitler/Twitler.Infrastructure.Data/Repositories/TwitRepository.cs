@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using Twitler.Data.Context;
 using Twitler.Domain.Interfaces;
 using Twitler.Domain.Model;
@@ -28,6 +29,11 @@ namespace Twitler.Data.Repositories
                 .Include(t => t.HashTags).ToList();
         }
 
+        public Twit GetIfOwned(string userEmailOwner, int twitId)
+        {
+            return _context.Twits.SingleOrDefault(t => t.Id == twitId && t.User.Email == userEmailOwner);
+        }
+
         public void Add(Twit twit)
         {
             if (twit != null)
@@ -38,6 +44,14 @@ namespace Twitler.Data.Repositories
                 _context.Twits.Add(twit);
                 _context.SaveChanges();
             }
+        }
+
+        public void Delete(Twit twit)
+        {
+            if (twit == null) return;
+
+            _context.Entry(twit).State = EntityState.Deleted;
+            _context.SaveChanges();
         }
 
         private void AttachHashTags(ICollection<HashTag> hashTags)

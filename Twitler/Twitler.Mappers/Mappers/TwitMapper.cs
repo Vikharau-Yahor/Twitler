@@ -30,9 +30,11 @@ namespace Twitler.Mappers.Mappers
             return twit;
         }
 
-        public TwitVm ToTwitVm(Twit model)
+        public TwitVm ToTwitVm(Twit model, string twitOwnerEmail)
         {
-            return _mapper.Map<Twit, TwitVm>(model);
+            var viewModel = _mapper.Map<Twit, TwitVm>(model);
+            viewModel.CanBeModified = viewModel.UserName == twitOwnerEmail;
+            return viewModel;
         }
     }
 }

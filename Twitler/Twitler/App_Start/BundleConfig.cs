@@ -24,8 +24,10 @@ namespace Twitler
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/posts-feed-tools").Include(
-                "~/Scripts/Posts/post_twit.js",
-                "~/Scripts/Posts/posts_search.js"));
+                "~/Scripts/Twits/post_twit.js",
+                "~/Scripts/Twits/search_twits.js",
+                "~/Scripts/Twits/delete_twit.js"));
+
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
