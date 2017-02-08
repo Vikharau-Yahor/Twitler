@@ -20,5 +20,18 @@ namespace Twitler.Data.Repositories
         {
             return _context.Twits.ToList();
         }
+
+        public void Add(string userEmail, Twit twit)
+        {
+            if (userEmail == null || twit == null)
+                return;
+
+            var user = _context.Users.SingleOrDefault(u => u.Email == userEmail);
+            if (user != null)
+            {
+                user.Twits.Add(twit);
+                _context.SaveChanges();
+            }
+        }
     }
 }

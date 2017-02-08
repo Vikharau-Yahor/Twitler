@@ -18,6 +18,7 @@ namespace Twitler.Mappers
         {
             config.CreateMap<Twit, TwitVm>()
                 .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.Email));
+            config.CreateMap<PostedTwitJm, Twit>();
 
         }
     }

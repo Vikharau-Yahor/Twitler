@@ -27,5 +27,17 @@ namespace Twitler.Data.Repositories
 
             return result;
         }
+
+        public User Get(string email)
+        {
+            User result = null;
+
+            if (email != null)
+            {
+                result = _context.Users.SingleOrDefault(u => u.Email == email);
+            }
+
+            return result;
+        }
     }
 }

@@ -7,5 +7,6 @@ namespace Twitler.Domain.Interfaces
     public interface ITwitRepository
     {
         List<Twit> GetAll();
+        void Add(string userEmail, Twit twit);
     }
 }

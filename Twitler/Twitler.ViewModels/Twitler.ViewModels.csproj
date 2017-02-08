@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Account\LoginVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Twit\PostedTwitJM.cs" />
     <Compile Include="Twit\TwitVM.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

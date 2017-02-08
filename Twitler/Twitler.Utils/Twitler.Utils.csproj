@@ -42,6 +42,10 @@
   <ItemGroup>
     <Compile Include="Encryptors\IEncryptor.cs" />
     <Compile Include="Encryptors\MD5Encryptor.cs" />
+    <Compile Include="HashTools\HashExtractor.cs" />
+    <Compile Include="HashTools\HashConverter.cs" />
+    <Compile Include="HashTools\IHashConverter.cs" />
+    <Compile Include="HashTools\IHashExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

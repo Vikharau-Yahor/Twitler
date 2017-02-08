@@ -8,6 +8,7 @@ using Twitler.Data.Repositories;
 using Twitler.Domain.Interfaces;
 using Twitler.Mappers;
 using Twitler.Utils.Encryptors;
+using Twitler.Utils.HashTools;
 
 namespace Twitler.DI
 {
@@ -43,6 +44,8 @@ namespace Twitler.DI
 
             //Utils
             kernel.Bind<IEncryptor>().To<MD5Encryptor>().InSingletonScope();
+            kernel.Bind<IHashExtractor>().To<HashExtractor>().InSingletonScope();
+            kernel.Bind<IHashConverter>().To<HashConverter>().InSingletonScope();
 
             //automapper
             kernel.Bind<IMapper>().ToMethod(AutoMapperCreator.GetMapper).InSingletonScope();

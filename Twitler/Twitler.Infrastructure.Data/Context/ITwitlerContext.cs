@@ -9,5 +9,7 @@ namespace Twitler.Data.Context
         DbSet<User> Users { get; set; }
         DbSet<Twit> Twits { get; set; }
         DbSet<HashTag> HashTags { get; set; }
+
+        int SaveChanges();
     }
 }
