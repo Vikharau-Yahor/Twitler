@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitler.Data", "Twitler.Inf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitler.Interfaces", "Twitler.Core.Interfaces\Twitler.Interfaces.csproj", "{5F86162A-240D-4EE8-9171-5EEE5EE78273}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitler.Services", "Twitler.Infrastructure.Services\Twitler.Services.csproj", "{04785748-F508-4133-86C7-1BDA84E43F84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitler.CQRS", "Twitler.Infrastructure.Services\Twitler.CQRS.csproj", "{04785748-F508-4133-86C7-1BDA84E43F84}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D33632BD-F618-4100-B072-9F3295CEDFE8}"
 EndProject

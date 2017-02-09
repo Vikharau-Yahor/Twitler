@@ -9,6 +9,7 @@ using Twitler.Domain.Interfaces;
 using Twitler.Domain.Model;
 using Twitler.Filters;
 using Twitler.Mappers.Mappers;
+using Twitler.Services.Queries;
 using Twitler.Utils.Comparers;
 using Twitler.Utils.HashTools;
 using Twitler.ViewModels.Twit;
@@ -18,15 +19,15 @@ namespace Twitler.Controllers
     [Authorize]
     public class UserController : Controller
     {
-        private readonly ITwitRepository _twitRepository;
-        private readonly IUserRepository _userRepository;
+        private readonly IRepository<Twit> _twitRepository;
+        private readonly IRepository<User> _userRepository;
         private readonly TwitMapper _twitMapper;
         private readonly IHashExtractor _hashExtractor;
 
-        public UserController(ITwitRepository twitRepository,
-                              IUserRepository userRepository,
-                              TwitMapper twitMapper,
-                              IHashExtractor hashExtractor)
+        public UserController(IRepository<Twit> twitRepository,
+            IRepository<User> userRepository,
+            TwitMapper twitMapper,
+            IHashExtractor hashExtractor)
         {
             _twitRepository = twitRepository;
             _userRepository = userRepository;
@@ -42,19 +43,20 @@ namespace Twitler.Controllers
         public ActionResult PostsFeed()
         {
             var curUserName = User.Identity.Name;
-            var twits = _twitRepository.GetAll();
-            var twitsViewModels = twits.Select(t=>_twitMapper.ToTwitVm(t,curUserName))
+            var twits = _twitRepository.Get(new TwitAllQuery()).ToList();
+            var twitsViewModels = twits.Select(t => _twitMapper.ToTwitVm(t, curUserName))
                 .OrderByDescending(t => t.DatePost).ToList();
 
             return PartialView("_PartialMessages", twitsViewModels);
         }
 
-        
+
         public ActionResult SearchTwits(string searchString)
         {
             var curUserName = User.Identity.Name;
-            var hashValues = _hashExtractor.GetFromString(searchString);       
-            var twits = _twitRepository.GetByHashTags(hashValues)
+            var hashValues = _hashExtractor.GetFromString(searchString);
+            var query = new TwitByHashTagsQuery(hashValues);
+            var twits = _twitRepository.Get(query).ToList()
                 .OrderBy(t => t, new TwitComparerByHashTag(hashValues));
             var twitsViewModels = twits.Select(t => _twitMapper.ToTwitVm(t, curUserName)).ToList();
             return PartialView("_PartialMessages", twitsViewModels);
@@ -65,7 +67,8 @@ namespace Twitler.Controllers
         {
             if (ModelState.IsValid)
             {
-                var curUser = _userRepository.Get(User.Identity.Name);
+                var curUser = _userRepository.Get(new UserByEmailQuery(User.Identity.Name))
+                    .SingleOrDefault();
                 var newTwit = _twitMapper.ToDomainModel(twitModel, curUser);
                 _twitRepository.Add(newTwit);
 
@@ -77,7 +80,8 @@ namespace Twitler.Controllers
         [HttpPost]
         public ActionResult DeleteTwit(int twitId)
         {
-            var removedTwit = _twitRepository.GetIfOwned(User.Identity.Name, twitId);
+            var query = new TwitByUserQuery(User.Identity.Name, twitId);
+            var removedTwit = _twitRepository.Get(query).SingleOrDefault();
             _twitRepository.Delete(removedTwit);
 
             return RedirectToAction("PostsFeed");

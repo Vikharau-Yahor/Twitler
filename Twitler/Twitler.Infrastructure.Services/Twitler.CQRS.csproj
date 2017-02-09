@@ -50,15 +50,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\Twit\TwitByUserQuery.cs" />
+    <Compile Include="Queries\Twit\TwitByHashTagsQuery.cs" />
+    <Compile Include="Queries\Twit\TwitAllQuery.cs" />
+    <Compile Include="Queries\User\UserByCredsQuery.cs" />
+    <Compile Include="Queries\User\UserByEmailQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Twitler.Core.Interfaces\Twitler.Interfaces.csproj">
       <Project>{5F86162A-240D-4EE8-9171-5EEE5EE78273}</Project>
-      <Name>Twitler.Domain.Interfaces</Name>
+      <Name>Twitler.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Twitler.Core.Model\Twitler.Model.csproj">
       <Project>{CB299E74-7D42-41AE-8CCD-FD75E0316B23}</Project>
-      <Name>Twitler.Domain.Model</Name>
+      <Name>Twitler.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Twitler.Infrastructure.Data\Twitler.Data.csproj">
       <Project>{7DEEB089-AFE3-46B6-B371-B9BC98D84B23}</Project>
@@ -69,6 +74,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -7,6 +7,7 @@ using Ninject.Web.Common;
 using Twitler.Data.Context;
 using Twitler.Data.Repositories;
 using Twitler.Domain.Interfaces;
+using Twitler.Domain.Model;
 using Twitler.Mappers;
 using Twitler.Mappers.Mappers;
 using Twitler.Utils.Encryptors;
@@ -41,8 +42,8 @@ namespace Twitler.DI
                 .WithConstructorArgument("dbConnectionString", "TwitlerDB");
             
             //Repositories
-            kernel.Bind<IUserRepository>().To<UserRepository>();
-            kernel.Bind<ITwitRepository>().To<TwitRepository>();
+            kernel.Bind<IRepository<User>>().To<UserRepository>();
+            kernel.Bind<IRepository<Twit>>().To<TwitRepository>();
 
             //Utils
             kernel.Bind<IEncryptor>().To<MD5Encryptor>().InSingletonScope();

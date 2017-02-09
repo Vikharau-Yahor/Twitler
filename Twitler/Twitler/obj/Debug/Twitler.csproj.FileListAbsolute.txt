@@ -68,3 +68,5 @@ D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.Mappers.pdb
 D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\NLog.config
 D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\NLog.dll
 D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\NLog.xml
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.Services.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.Services.pdb

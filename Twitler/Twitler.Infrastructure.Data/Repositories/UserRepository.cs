@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using Twitler.Data.Context;
 using Twitler.Domain.Interfaces;
@@ -6,7 +7,7 @@ using Twitler.Domain.Model;
 
 namespace Twitler.Data.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : IRepository<User>
     {
         private ITwitlerContext _context;
 
@@ -15,29 +16,21 @@ namespace Twitler.Data.Repositories
             _context = context;
         }
 
-        public User Find(string email, Guid password)
+        public IQueryable<User> Get(IQuery<User> query)
         {
-            User result = null;
-
-            if (email != null)
-            {
-                result = _context.Users.SingleOrDefault(u => u.Email == email &&
-                                                             u.Password == password);
-            }
-
-            return result;
+            return query.Execute(_context.Users);
         }
 
-        public User Get(string email)
+        public void Add(User entity)
         {
-            User result = null;
+            _context.Users.Add(entity);
+            _context.SaveChanges();
+        }
 
-            if (email != null)
-            {
-                result = _context.Users.SingleOrDefault(u => u.Email == email);
-            }
-
-            return result;
+        public void Delete(User entity)
+        {
+            _context.Entry(entity).State = EntityState.Deleted;
+            _context.SaveChanges();
         }
     }
 }

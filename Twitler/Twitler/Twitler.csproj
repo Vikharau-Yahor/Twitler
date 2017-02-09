@@ -204,9 +204,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\User\Main.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />
@@ -234,6 +231,10 @@
     <ProjectReference Include="..\Twitler.Core.Model\Twitler.Model.csproj">
       <Project>{CB299E74-7D42-41AE-8CCD-FD75E0316B23}</Project>
       <Name>Twitler.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Twitler.Infrastructure.Services\Twitler.CQRS.csproj">
+      <Project>{04785748-F508-4133-86C7-1BDA84E43F84}</Project>
+      <Name>Twitler.CQRS</Name>
     </ProjectReference>
     <ProjectReference Include="..\Twitler.Mappers\Twitler.Mappers.csproj">
       <Project>{1BF1D0C6-5513-4F22-94B8-D03FF3244E46}</Project>

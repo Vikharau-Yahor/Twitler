@@ -9,7 +9,7 @@ using Twitler.Domain.Model;
 
 namespace Twitler.Data.Repositories
 {
-    public class TwitRepository : ITwitRepository
+    public class TwitRepository : IRepository<Twit>
     {
         private ITwitlerContext _context;
 
@@ -18,32 +18,19 @@ namespace Twitler.Data.Repositories
             _context = context;
         }
 
-        public List<Twit> GetAll()
+        public IQueryable<Twit> Get(IQuery<Twit> query)
         {
-            return _context.Twits.ToList();
-        }
-
-        public List<Twit> GetByHashTags(int[] hashValues)
-        {
-            return _context.Twits.Where(t => t.HashTags.Any(ht => hashValues.Contains(ht.HashValue)))
-                .Include(t => t.HashTags).ToList();
-        }
-
-        public Twit GetIfOwned(string userEmailOwner, int twitId)
-        {
-            return _context.Twits.SingleOrDefault(t => t.Id == twitId && t.User.Email == userEmailOwner);
+            return query.Execute(_context.Twits);
         }
 
         public void Add(Twit twit)
         {
-            if (twit != null)
-            {
-                AttachHashTags(twit.HashTags);
-               
-                //insert twit
-                _context.Twits.Add(twit);
-                _context.SaveChanges();
-            }
+
+            AttachHashTags(twit.HashTags);
+
+            //insert twit
+            _context.Twits.Add(twit);
+            _context.SaveChanges();
         }
 
         public void Delete(Twit twit)
