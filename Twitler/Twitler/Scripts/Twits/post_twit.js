@@ -47,6 +47,7 @@ function CollectDataOfNewTwit() {
         second: 'numeric'
     };
     data.DatePost = now.toLocaleString("ru", options);
+    $("#text-post-message").val('');
     return data;
 }
 

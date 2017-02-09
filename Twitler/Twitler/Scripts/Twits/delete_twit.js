@@ -33,7 +33,7 @@ $(document).ready(function () {
     $("#btn-accept-delete").click(function(e) {
         var twitId = this.getAttribute("data-twit-id");
         if (twitId != "") {
-            $.when(DeleteTwit(twitId)).done(SetClickEventsForDeleteBtns());
+            DeleteTwit(twitId);
         }
         $('#modDialog').modal('hide');
     });

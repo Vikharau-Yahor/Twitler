@@ -4,9 +4,6 @@
 @foreach (var twit in Model)
 {
     <div class="post-message">
-
-        @*<div style="float: right"><input class="delete-btn" type="button" value="x" /></div>*@
-        @*<button class="close btn-delete-twit" data-twit-id=@twit.Id data-dismiss="modal" area-hidden="true">x</button>*@
         @Html.RenderRemoveTwitBtn(twit.CanBeModified,twit.Id)
         <h4 style="color: burlywood">@twit.UserName</h4>    
         <hr/>
