@@ -64,10 +64,9 @@ namespace Twitler.Controllers
 
                 if (user == null)
                 {
-                    // создаем нового пользователя
                     var hashedPassword = _encryptor.Encrypt(model.Password);
                     _userRepository.Add(new User {Email = model.Email, Password = hashedPassword});
-                     return RedirectToAction("Login");
+                    return RedirectToAction("Login");
                 }
 
                 ModelState.AddModelError("", "Этот email уже занят");
