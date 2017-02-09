@@ -49,6 +49,33 @@ namespace Twitler.Controllers
             return View(loginVm);
         }
 
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(RegisterVm model)
+        {
+            if (ModelState.IsValid)
+            {
+                User user = _userRepository.Get(new UserByEmailQuery(model.Email)).SingleOrDefault();
+
+                if (user == null)
+                {
+                    // создаем нового пользователя
+                    var hashedPassword = _encryptor.Encrypt(model.Password);
+                    _userRepository.Add(new User {Email = model.Email, Password = hashedPassword});
+                     return RedirectToAction("Login");
+                }
+
+                ModelState.AddModelError("", "Этот email уже занят");
+            }
+
+            return View(model);
+        }
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\LoginVM.cs" />
+    <Compile Include="Account\RegisterVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Twit\PostedTwitJM.cs" />
     <Compile Include="Twit\TwitVM.cs" />
