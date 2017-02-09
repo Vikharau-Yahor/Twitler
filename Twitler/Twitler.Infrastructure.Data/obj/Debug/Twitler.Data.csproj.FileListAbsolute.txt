@@ -17,3 +17,5 @@ D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\Twit
 D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\obj\Debug\Twitler.Data.Migrations.Initial.resources
 D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\obj\Debug\Twitler.Data.csproj.GenerateResource.Cache
 D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\obj\Debug\Twitler.Data.Migrations.AddHashTags.resources
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\NLog.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler.Infrastructure.Data\bin\Debug\NLog.xml

@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -18,6 +19,13 @@ namespace Twitler
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);       
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception exception = Server.GetLastError().GetBaseException();
+
+            logger.Error($"Unhandled error. Exception: {exception.Message}");
         }
 
         protected void Application_End()

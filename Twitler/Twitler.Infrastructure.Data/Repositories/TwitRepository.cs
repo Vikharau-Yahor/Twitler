@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
+using NLog;
 using Twitler.Data.Context;
 using Twitler.Domain.Interfaces;
 using Twitler.Domain.Model;
@@ -11,7 +12,8 @@ namespace Twitler.Data.Repositories
 {
     public class TwitRepository : IRepository<Twit>
     {
-        private ITwitlerContext _context;
+        private readonly ITwitlerContext _context;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public TwitRepository(ITwitlerContext context)
         {
@@ -25,20 +27,45 @@ namespace Twitler.Data.Repositories
 
         public void Add(Twit twit)
         {
+            try
+            {
+                AttachHashTags(twit.HashTags);
+            }
+            catch (Exception exception)
+            {
+                logger.Error($"Add method: error occurred when new hash-tags saving to database. Exception: {exception.Message}. StackTrace: {exception.StackTrace}");
+                return;
+            }
 
-            AttachHashTags(twit.HashTags);
-
-            //insert twit
-            _context.Twits.Add(twit);
-            _context.SaveChanges();
+            try
+            {
+                //insert twit
+                _context.Twits.Add(twit);
+                _context.SaveChanges();
+            }
+            catch(Exception exception)
+            { 
+                logger.Error($"Add method: error occurred when new twit-message saving to database. Exception: {exception.Message}. StackTrace: {exception.StackTrace}");
+            }
         }
 
         public void Delete(Twit twit)
         {
-            if (twit == null) return;
+            if (twit == null)
+            {
+                logger.Warn($"Delete method: twit-message object is null. This method will execute nothing");
+                return;
+            }
 
-            _context.Entry(twit).State = EntityState.Deleted;
-            _context.SaveChanges();
+            try
+            {
+                _context.Entry(twit).State = EntityState.Deleted;
+                _context.SaveChanges();
+            }
+            catch (Exception exception)
+            {
+                logger.Error($"Delete method: error occurred when twit-message removing from database. Exception: {exception.Message}. StackTrace: {exception.StackTrace}");
+            }
         }
 
         private void AttachHashTags(ICollection<HashTag> hashTags)
