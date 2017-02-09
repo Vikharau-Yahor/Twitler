@@ -2,6 +2,7 @@
 using System.Web.Security;
 using Twitler.Domain.Interfaces;
 using Twitler.Domain.Model;
+using Twitler.Filters;
 using Twitler.Utils.Encryptors;
 using Twitler.ViewModels.Account;
 

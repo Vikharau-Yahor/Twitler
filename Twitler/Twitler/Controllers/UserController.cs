@@ -7,6 +7,7 @@ using AutoMapper;
 using Microsoft.Ajax.Utilities;
 using Twitler.Domain.Interfaces;
 using Twitler.Domain.Model;
+using Twitler.Filters;
 using Twitler.Mappers.Mappers;
 using Twitler.Utils.Comparers;
 using Twitler.Utils.HashTools;

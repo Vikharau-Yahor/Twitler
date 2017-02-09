@@ -65,3 +65,6 @@ D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.Mappers.dll
 D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.ViewModels.pdb
 D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\AutoMapper.xml
 D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\Twitler.Mappers.pdb
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\NLog.config
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\NLog.dll
+D:\gitHubRepositories\Twitler\Twitler\Twitler\bin\NLog.xml
